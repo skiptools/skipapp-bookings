@@ -10,67 +10,68 @@ struct TravelBookingView: View {
     let city: City
     let relatedCities: [City]
     @Binding var favorite: Bool
+    @State var departure = Date()
 
     var body: some View {
-        VStack {
-            Text(city.name).font(.largeTitle)
-            Text(city.tagline).font(.title2)
-            AsyncImage(url: city.imageURL) { image in
-                image.resizable().aspectRatio(contentMode: .fit)
-            } placeholder: {
-                ProgressView()
+        VStack(spacing: 0.0) {
+            ZStack(alignment: .bottom) {
+                AsyncImage(url: city.imageURL) { image in
+                    image.resizable().aspectRatio(contentMode: .fill).frame(height: 200).clipped()
+                } placeholder: {
+                    ProgressView()
+                }
+                Rectangle()
+                    .fill(.linearGradient(colors: [Color.clear, Color.black.opacity(0.4)], startPoint: UnitPoint(x: 0, y: 0), endPoint: UnitPoint(x: 0, y: 1)))
+                VStack {
+                    Text(city.name).font(.largeTitle).bold()
+                    Text(city.tagline).font(.title2)
+                }
+                .foregroundStyle(.white)
+                .padding()
             }
-            .frame(width: 400)
-
-            CityInfoView(city: city, favorite: $favorite)
+            .frame(height: 200)
 
             List {
-                ForEach(relatedCities) { city in
-                    NavigationLink(value: city.id) {
-                        HStack {
-                            AsyncImage(url: city.imageURL) { image in
-                                image.resizable().clipped()
-                            } placeholder: {
-                                ProgressView()
-                            }
-                            .frame(width: 50, height: 50)
-                            VStack(alignment: .leading) {
-                                Text(city.name)
-                                Text(city.tagline)
+                Section {
+                    HStack {
+                        Text("Country")
+                        Spacer()
+                        Text("\(city.country)")
+                    }
+                    HStack {
+                        Text("Population")
+                        Spacer()
+                        Text("\(city.population)")
+                    }
+                    HStack {
+                        Text("Best weather")
+                        Spacer()
+                        Text("\(city.nicestMonth)")
+                    }
+                    DatePicker("Departure", selection: $departure)
+                    Toggle("Favorite", isOn: $favorite)
+                }
+                Section("Related Destinations") {
+                    ForEach(relatedCities) { city in
+                        NavigationLink(value: city.id) {
+                            HStack {
+                                AsyncImage(url: city.imageURL) { image in
+                                    image.resizable().clipped()
+                                } placeholder: {
+                                    ProgressView()
+                                }
+                                .cornerRadius(8)
+                                .frame(width: 50, height: 50)
+                                VStack(alignment: .leading) {
+                                    Text(city.name)
+                                    Text(city.tagline)
+                                }
                             }
                         }
                     }
                 }
             }
         }
-    }
-}
-
-
-struct CityInfoView : View {
-    let city: City
-    @Binding var favorite: Bool
-
-    var body: some View {
-        Form {
-            HStack {
-                Text("Country")
-                Spacer()
-                Text("\(city.country)")
-            }
-            HStack {
-                Text("Population")
-                Spacer()
-                Text("\(city.population)")
-            }
-            HStack {
-                Text("Best weather")
-                Spacer()
-                Text("\(city.nicestMonth)")
-            }
-//            Text("Latitude: \(city.latitude)")
-//            Text("Longitude: \(city.longitude)")
-            Toggle("Favorite", isOn: $favorite)
-        }
+        .ignoresSafeArea(edges: .top)
     }
 }
