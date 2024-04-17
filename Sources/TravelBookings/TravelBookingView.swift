@@ -1,9 +1,3 @@
-// Copyright 2023 Skip
-//
-// This is free software: you can redistribute and/or modify it
-// under the terms of the GNU Lesser General Public License 3.0
-// as published by the Free Software Foundation https://fsf.org
-
 import SwiftUI
 
 struct TravelBookingView: View {
@@ -21,7 +15,7 @@ struct TravelBookingView: View {
                     ProgressView()
                 }
                 Rectangle()
-                    .fill(.linearGradient(colors: [Color.clear, Color.black.opacity(0.4)], startPoint: UnitPoint(x: 0, y: 0), endPoint: UnitPoint(x: 0, y: 1)))
+                    .fill(.linearGradient(colors: [Color.clear, Color.black.opacity(0.4)], startPoint: UnitPoint.top, endPoint: UnitPoint.bottom))
                 VStack {
                     Text(city.name).font(.largeTitle).bold()
                     Text(city.tagline).font(.title2)
@@ -32,25 +26,7 @@ struct TravelBookingView: View {
             .frame(height: 200)
 
             List {
-                Section {
-                    HStack {
-                        Text("Country")
-                        Spacer()
-                        Text("\(city.country)")
-                    }
-                    HStack {
-                        Text("Population")
-                        Spacer()
-                        Text("\(city.population)")
-                    }
-                    HStack {
-                        Text("Best weather")
-                        Spacer()
-                        Text("\(city.nicestMonth)")
-                    }
-                    DatePicker("Departure", selection: $departure)
-                    Toggle("Favorite", isOn: $favorite)
-                }
+                CountryInfoSection()
                 Section("Related Destinations") {
                     ForEach(relatedCities) { city in
                         NavigationLink(value: city.id) {
@@ -74,4 +50,28 @@ struct TravelBookingView: View {
         }
         .ignoresSafeArea(edges: .top)
     }
+
+
+    fileprivate func CountryInfoSection() -> some View {
+        Section {
+            HStack {
+                Text("Country")
+                Spacer()
+                Text(city.country)
+            }
+            HStack {
+                Text("Population")
+                Spacer()
+                Text(city.population)
+            }
+            HStack {
+                Text("Best weather")
+                Spacer()
+                Text(city.nicestMonth)
+            }
+            DatePicker("Departure", selection: $departure)
+            Toggle("Favorite", isOn: $favorite)
+        }
+    }
+
 }
