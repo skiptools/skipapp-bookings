@@ -35,8 +35,10 @@ struct TravelBookingView: View {
                     }
                 }
             }
-            .toolbar(.hidden, for: .navigationBar)
             .ignoresSafeArea(edges: .top)
+            #if os(iOS)
+            .toolbar(.hidden, for: .navigationBar)
+            #endif
         }
     }
 
