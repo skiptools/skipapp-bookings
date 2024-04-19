@@ -32,6 +32,9 @@
     "Best weather" : {
 
     },
+    "Cities" : {
+
+    },
     "Country" : {
 
     },
@@ -102,6 +105,7 @@
       }
     },
     "Home" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -130,6 +134,7 @@
       }
     },
     "Item %lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -186,6 +191,7 @@
       }
     },
     "Name" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -212,6 +218,12 @@
           }
         }
       }
+    },
+    "No Cities" : {
+
+    },
+    "No Favorites" : {
+
     },
     "Population" : {
 
@@ -248,6 +260,7 @@
 
     },
     "Screen %lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
