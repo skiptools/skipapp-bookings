@@ -47,12 +47,11 @@ struct City : Identifiable, Codable {
 
 fileprivate let localCities: [City] = try! JSONDecoder().decode([City].self, from: Data(contentsOf: Bundle.module.url(forResource: "Cities", withExtension: "json")!))
 
-let cities: [City] = localCities.shuffled().map({ c in
+let cities: [City] = localCities.sorted { c1, c2 in
+    c1.name < c2.name
+}.map({ c in
     var city = c
     city.relatedCities = localCities.shuffled()
     return city
 })
 
-let citiesSorted: [City] = cities.sorted { c1, c2 in
-    c1.name < c2.name
-}
