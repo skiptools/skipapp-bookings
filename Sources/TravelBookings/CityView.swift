@@ -68,14 +68,18 @@ struct CityView: View {
 
             NavigationLink("Map") {
                 MapView(latitude: city.latitude, longitude: city.longitude)
-                    .navigationBarTitleDisplayMode(.inline)
                     .navigationTitle(Text(city.name))
+                    #if !os(macOS)
+                    .navigationBarTitleDisplayMode(.inline)
+                    #endif
             }
 
             NavigationLink("Wikipedia") {
                 WebView(url: city.wikipediaURL)
-                    .navigationBarTitleDisplayMode(.inline)
                     .navigationTitle(Text(city.name))
+                    #if !os(macOS)
+                    .navigationBarTitleDisplayMode(.inline)
+                    #endif
             }
 
         }
