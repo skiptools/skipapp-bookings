@@ -1,5 +1,4 @@
 import SwiftUI
-import Foundation
 
 public struct ContentView: View {
     @AppStorage("tab") var tab = Tab.cities
@@ -12,14 +11,14 @@ public struct ContentView: View {
     public var body: some View {
         TabView(selection: $tab) {
             NavigationStack {
-                CityListView(cityManager: cityManager, favorites: false)
+                CityListView()
                     .navigationTitle("Cities")
             }
                 .tabItem { Label("Cities", systemImage: "list.bullet") }
                 .tag(Tab.cities)
 
             NavigationStack {
-                CityListView(cityManager: cityManager, favorites: true)
+                FavoriteCityListView()
                     .navigationTitle("Favorites")
             }
                 .tabItem { Label("Favorites", systemImage: "heart.fill") }
@@ -29,6 +28,7 @@ public struct ContentView: View {
                 .tabItem { Label("Settings", systemImage: "gearshape.fill") }
                 .tag(Tab.settings)
         }
+        .environmentObject(cityManager)
         .preferredColorScheme(appearance == "dark" ? .dark : appearance == "light" ? .light : nil)
     }
 }

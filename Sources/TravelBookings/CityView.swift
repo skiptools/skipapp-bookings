@@ -1,11 +1,12 @@
 import SwiftUI
 import Foundation
 
+/// An overview of a City
 struct CityView: View {
     let city: City
-    var showMap: Bool
-    @Binding var favorite: Bool
+    let showFavorites: Bool
     @State var departure = Date()
+    @EnvironmentObject var cityManager: CityManager
 
     var body: some View {
         VStack(spacing: 0.0) {
@@ -29,16 +30,12 @@ struct CityView: View {
             }
             .frame(height: 200)
 
-            if showMap {
-                MapView(latitude: city.latitude, longitude: city.longitude)
-            } else {
-                List {
-                    Section {
-                        CountryInfoSection()
-                    }
-                    Section("Related Destinations") {
-                        ForEach(city.relatedCities ?? [], content: { CityNavigationLink(city: $0) })
-                    }
+            List {
+                Section {
+                    CountryInfoSection()
+                }
+                Section("Nearest Cities") {
+                    ForEach(cityManager.citiesClosest(to: city), content: { CityNavigationLink(city: $0) })
                 }
             }
         }
@@ -56,60 +53,31 @@ struct CityView: View {
                 Spacer()
                 Text(city.country)
             }
+
             HStack {
                 Text("Population")
                 Spacer()
                 Text(city.population)
             }
+
             DatePicker("Departure", selection: $departure)
-            Toggle("Favorite", isOn: $favorite)
+
+            if showFavorites {
+                Toggle("Favorite", isOn: cityManager.favoriteBinding(for: city))
+            }
+
+            NavigationLink("Map") {
+                MapView(latitude: city.latitude, longitude: city.longitude)
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationTitle(Text(city.name))
+            }
+
             NavigationLink("Wikipedia") {
                 WebView(url: city.wikipediaURL)
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationTitle(Text(city.name))
             }
 
-        }
-    }
-}
-
-struct DismissButton : View {
-    @Environment(\.dismiss) var dismiss
-
-    var body: some View {
-        HStack(alignment: .center) {
-            Button {
-                dismiss()
-            } label: {
-                Image(systemName: "chevron.left")
-                    .font(.title)
-                    .foregroundStyle(.white)
-            }
-            .padding()
-
-            Spacer()
-        }
-    }
-}
-
-struct CityNavigationLink : View {
-    let city: City
-
-    var body: some View {
-        NavigationLink(value: city.id) {
-            HStack {
-                AsyncImage(url: city.imageURL) { image in
-                    image.resizable().clipped()
-                } placeholder: {
-                    ProgressView()
-                }
-                .cornerRadius(8)
-                .frame(width: 50, height: 50)
-                VStack(alignment: .leading) {
-                    Text(city.name)
-                    Text(city.tagline)
-                }
-            }
         }
     }
 }

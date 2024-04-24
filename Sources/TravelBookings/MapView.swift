@@ -17,6 +17,9 @@ struct MapView : View {
         // on Darwin platforms, we use the new SwiftUI Map type
         if #available(iOS 17.0, macOS 14.0, *) {
             Map(initialPosition: .region(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))))
+        } else {
+            Text("Map requires iOS 17")
+                .font(.title)
         }
         #else
         // on Android platforms, we use com.google.maps.android.compose.GoogleMap within in a ComposeView
