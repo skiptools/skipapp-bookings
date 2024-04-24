@@ -17,7 +17,7 @@ struct CityView: View {
                     ProgressView()
                 }
                 Rectangle()
-                    .fill(.linearGradient(colors: [Color.clear, Color.black.opacity(0.4)], startPoint: UnitPoint.top, endPoint: UnitPoint.bottom))
+                    .fill(.linearGradient(colors: [.clear, .black.opacity(0.4)], startPoint: .top, endPoint: .bottom))
                 VStack {
                     Spacer()
                     Text(city.name).font(.largeTitle).bold()

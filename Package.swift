@@ -19,7 +19,7 @@ let package = Package(
         .library(name: "TravelBookingsApp", type: .dynamic, targets: ["TravelBookings"]),
     ],
     dependencies: [
-        .package(url: "https://source.skip.tools/skip.git", from: "0.8.27"),
+        .package(url: "https://source.skip.tools/skip.git", from: "0.8.36"),
         .package(url: "https://source.skip.tools/skip-ui.git", from: "0.0.0")
     ],
     targets: [
