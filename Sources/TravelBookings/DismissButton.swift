@@ -5,20 +5,14 @@ struct DismissButton : View {
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
-        HStack(alignment: .center) {
-            Button {
-                dismiss()
-            } label: {
-                // A custom back button image
-                Chevron()
-                    .stroke(style: StrokeStyle(lineWidth: 4, lineCap: .round, lineJoin: .bevel))
-                    .foregroundStyle(.white)
-                    .frame(width: 20, height: 20)
-                    .accessibilityLabel(Text("Back"))
-            }
-            .padding()
-
-            Spacer()
+        Button {
+            dismiss()
+        } label: {
+            // A custom back button image
+            Chevron()
+                .stroke(style: StrokeStyle(lineWidth: 4, lineCap: .round, lineJoin: .bevel))
+                .frame(width: 18, height: 18)
+                .accessibilityLabel(Text("Back"))
         }
     }
 }

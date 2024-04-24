@@ -31,3 +31,10 @@ extension City {
         return earthRadius * c
     }
 }
+
+extension Double {
+    /// Takes the current distance (in kilometers) and creates a string description of miles vs. kilometers
+    func distanceString(kilometers: Bool) -> String {
+        return Int64(kilometers ? (self) : (self / 1.60934)).description
+    }
+}

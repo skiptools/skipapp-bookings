@@ -1,6 +1,19 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@" : {
+
+    },
+    "%@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
     "%@, %@" : {
       "localizations" : {
         "en" : {
@@ -77,6 +90,9 @@
       }
     },
     "Departure" : {
+
+    },
+    "Fahrenheit/Celsius Units" : {
 
     },
     "Favorite" : {
@@ -207,6 +223,9 @@
 
     },
     "Map requires iOS 17" : {
+
+    },
+    "Miles/Kilometers Units" : {
 
     },
     "Name" : {

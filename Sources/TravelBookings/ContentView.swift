@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// The top-level view of the app, containing the primary tabs
 public struct ContentView: View {
     @AppStorage("tab") var tab = Tab.cities
     @State var appearance = ""

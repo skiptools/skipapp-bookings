@@ -16,8 +16,10 @@ struct CityView: View {
                 } placeholder: {
                     ProgressView()
                 }
+
                 Rectangle()
                     .fill(.linearGradient(colors: [.clear, .black.opacity(0.4)], startPoint: .top, endPoint: .bottom))
+
                 VStack {
                     Spacer()
                     Text(city.name).font(.largeTitle).bold()
@@ -26,7 +28,12 @@ struct CityView: View {
                 .foregroundStyle(.white)
                 .padding()
 
-                DismissButton()
+                HStack {
+                    DismissButton().padding()
+                    Spacer()
+                    TemperatureView(city: city).padding()
+                }
+                .foregroundStyle(.white)
             }
             .frame(height: 200)
 
