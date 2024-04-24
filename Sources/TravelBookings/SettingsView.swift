@@ -11,6 +11,11 @@ struct SettingsView : View {
                     Text("Light").tag("light")
                     Text("Dark").tag("dark")
                 }
+                NavigationLink("Source Code") {
+                    WebView(url: URL(string: "https://source.skip.tools/skipapp-bookings")!)
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationTitle(Text("Source"))
+                }
                 HStack {
                     #if SKIP
                     ComposeView { ctx in // Mix in Compose code!

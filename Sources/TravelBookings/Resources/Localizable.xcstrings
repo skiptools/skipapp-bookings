@@ -29,9 +29,6 @@
         }
       }
     },
-    "Best weather" : {
-
-    },
     "Cities" : {
 
     },
@@ -316,6 +313,12 @@
         }
       }
     },
+    "Source" : {
+
+    },
+    "Source Code" : {
+
+    },
     "System" : {
       "localizations" : {
         "es" : {
@@ -372,6 +375,9 @@
           }
         }
       }
+    },
+    "Wikipedia" : {
+
     }
   },
   "version" : "1.0"

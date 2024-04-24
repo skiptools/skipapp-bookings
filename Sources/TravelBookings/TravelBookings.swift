@@ -1,11 +1,11 @@
 import Foundation
 import SwiftUI
 
-private let favoritesURL = URL.documentsDirectory.appendingPathComponent("favorites.json")
+private let localCitiesURL: URL = Bundle.module.url(forResource: "Cities", withExtension: "json")!
+private let favoritesURL: URL = URL.documentsDirectory.appendingPathComponent("favorites.json")
 
 class CityManager : ObservableObject {
     static let shared = CityManager()
-    /// The location of the JSON document that stores the favorites
 
     @Published var allCities: [City] = cities
     @Published var favoriteIDs: Set<City.ID> = [] {
@@ -34,7 +34,7 @@ struct City : Identifiable, Codable {
     typealias ID = Int
 
     let id: ID
-    let name: String
+    var name: String
     let tagline: String
     let population: String
     let nicestMonth: String
@@ -42,10 +42,11 @@ struct City : Identifiable, Codable {
     let latitude: Double
     let longitude: Double
     let imageURL: URL
+    let wikipediaURL: URL
     var relatedCities: [City]?
 }
 
-fileprivate let localCities: [City] = try! JSONDecoder().decode([City].self, from: Data(contentsOf: Bundle.module.url(forResource: "Cities", withExtension: "json")!))
+fileprivate let localCities: [City] = try! JSONDecoder().decode([City].self, from: Data(contentsOf: localCitiesURL))
 
 let cities: [City] = localCities.sorted { c1, c2 in
     c1.name < c2.name

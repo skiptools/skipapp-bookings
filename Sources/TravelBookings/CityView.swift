@@ -37,7 +37,7 @@ struct CityView: View {
                         CountryInfoSection()
                     }
                     Section("Related Destinations") {
-                        ForEach(city.relatedCities!, content: { CityNavigationLink(city: $0) })
+                        ForEach(city.relatedCities ?? [], content: { CityNavigationLink(city: $0) })
                     }
                 }
             }
@@ -61,13 +61,14 @@ struct CityView: View {
                 Spacer()
                 Text(city.population)
             }
-            HStack {
-                Text("Best weather")
-                Spacer()
-                Text(city.nicestMonth)
-            }
             DatePicker("Departure", selection: $departure)
             Toggle("Favorite", isOn: $favorite)
+            NavigationLink("Wikipedia") {
+                WebView(url: city.wikipediaURL)
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationTitle(Text(city.name))
+            }
+
         }
     }
 }
