@@ -4,16 +4,6 @@
     "%@" : {
 
     },
-    "%@ %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ %2$@"
-          }
-        }
-      }
-    },
     "%@, %@" : {
       "localizations" : {
         "en" : {
@@ -90,6 +80,9 @@
       }
     },
     "Departure" : {
+
+    },
+    "Fahrenheit / Celsius" : {
 
     },
     "Fahrenheit/Celsius Units" : {
@@ -223,6 +216,9 @@
 
     },
     "Map requires iOS 17" : {
+
+    },
+    "Miles / Kilometers" : {
 
     },
     "Miles/Kilometers Units" : {

@@ -16,7 +16,7 @@ struct SettingsView : View {
                     }
 
                     HStack {
-                        Text("Fahrenheit/Celsius Units")
+                        Text("Fahrenheit / Celsius")
                         Spacer()
                         Text("\(Double(20.2).temperatureString(celsius: celsius))")
                             .font(.caption)
@@ -24,9 +24,9 @@ struct SettingsView : View {
                     }
 
                     HStack {
-                        Text("Miles/Kilometers Units")
+                        Text("Miles / Kilometers")
                         Spacer()
-                        Text("\(Double(16.0).distanceString(kilometers: kilometers)) \(kilometers ? "km" : "mi")")
+                        Text("\(Double(24).distanceString(kilometers: kilometers))")
                             .font(.caption)
                         Toggle("Miles/Kilometers Units", isOn: $kilometers).labelsHidden()
                     }
