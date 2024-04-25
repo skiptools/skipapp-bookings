@@ -16,9 +16,9 @@ struct City : Identifiable, Codable {
 }
 
 extension City {
-    /// Returns the distance in meters between the two latitude/longitude points using the Haversine formula
+    /// Returns the distance in kilometers between the two latitude/longitude points using the Haversine formula
     func distance(to city: City) -> Double {
-        let earthRadius: Double = 6371e3
+        let earthRadiusKilometers: Double = 6371
 
         let lat1 = self.latitude * .pi / 180
         let lat2 = self.latitude * .pi / 180
@@ -28,13 +28,6 @@ extension City {
         let a = sin(deltaLat / 2) * sin(deltaLat / 2) + cos(lat1) * cos(lat2) * sin(deltaLon / 2) * sin(deltaLon / 2)
         let c = 2 * atan2(sqrt(a), sqrt(1 - a))
 
-        return earthRadius * c
-    }
-}
-
-extension Double {
-    /// Takes the current distance (in kilometers) and creates a string description of miles vs. kilometers
-    func distanceString(kilometers: Bool) -> String {
-        return Int64(kilometers ? (self) : (self / 1.60934)).description
+        return earthRadiusKilometers * c
     }
 }

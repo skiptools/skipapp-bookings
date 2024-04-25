@@ -35,8 +35,10 @@ struct SettingsView : View {
                 Section("Info") {
                     NavigationLink("Source Code") {
                         WebView(url: URL(string: "https://source.skip.tools/skipapp-bookings")!)
-                            .navigationBarTitleDisplayMode(.inline)
                             .navigationTitle(Text("Source"))
+                            #if !os(macOS)
+                            .navigationBarTitleDisplayMode(.inline)
+                            #endif
                     }
                     HStack {
                         #if SKIP
