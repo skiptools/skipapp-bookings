@@ -26,7 +26,7 @@ extension City {
         let deltaLon = (city.longitude - self.longitude) * .pi / 180
 
         let a = sin(deltaLat / 2) * sin(deltaLat / 2) + cos(lat1) * cos(lat2) * sin(deltaLon / 2) * sin(deltaLon / 2)
-        let c = 2 * atan2(sqrt(a), sqrt(1 - a))
+        let c = 2 * atan2(sqrt(a), sqrt(max(0.0, 1.0 - a)))
 
         return earthRadiusKilometers * c
     }
