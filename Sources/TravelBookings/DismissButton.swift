@@ -2,6 +2,7 @@ import SwiftUI
 
 /// A custom button to dismiss the current view and go back in the navigation hierarchy
 struct DismissButton : View {
+    @Environment(\.layoutDirection) var layoutDirection
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
@@ -10,6 +11,7 @@ struct DismissButton : View {
         } label: {
             // A custom back button image
             Chevron()
+                .scale(x: layoutDirection == .rightToLeft ? -1.0 : 1.0)
                 .stroke(style: StrokeStyle(lineWidth: 4, lineCap: .round, lineJoin: .bevel))
                 .frame(width: 18, height: 18)
                 .accessibilityLabel(Text("Back"))
