@@ -16,6 +16,7 @@ and has the following features:
   iOS |  Android
 :----:|:--------:
 ![iOS Screenshot](https://assets.skip.tools/skipapp-bookings/city-list-iphone.png) | ![Android Screenshot](https://assets.skip.tools/skipapp-bookings/city-list-android.png)
+![iOS Screenshot](https://assets.skip.tools/skipapp-bookings/city-view-iphone.png) | ![Android Screenshot](https://assets.skip.tools/skipapp-bookings/city-view-android.png)
 
 ## Building
 
