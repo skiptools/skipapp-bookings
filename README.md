@@ -1,7 +1,19 @@
-# Bookings
+# Travel
 
-This is a [Skip](https://skip.tools) dual-platform app project.
-It builds a native app for both iOS and Android.
+This is a demonstration full-featured
+[Skip](https://skip.tools) dual-platform app project
+for both iOS and Android. It is a travel exploration app
+that displays cities loaded from a bundled JSON asset,
+and has the following features:
+
+  - a navigation list of the bundled city list
+  - a persistent favorites list that can be modified and reordered
+  - an embedded maps view for any given city
+  - an embedded web view showing the wikipedia page for the city
+  - dynamic temperature update using a weather web service endpoint
+  - a settings view enabling override of preferred color scheme and display units
+  
+![iOS Screenshot](https://assets.skip.tools/skipapp-bookings/city-list-iphone.png) ![Android Screenshot](https://assets.skip.tools/skipapp-bookings/city-list-android.png)
 
 ## Building
 

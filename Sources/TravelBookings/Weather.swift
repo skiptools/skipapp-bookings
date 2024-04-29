@@ -1,6 +1,8 @@
 import Foundation
 
 /// A JSON response from the open-meteo.com weather service
+///
+/// See https://github.com/open-meteo/sdk.git for a more complete SDK
 struct Weather : Hashable, Codable {
     var latitude: Double // e.g.: 42.36515
     var longitude: Double // e.g.: -71.0618
@@ -39,10 +41,11 @@ extension Weather {
         let lat = Double(round(latitude * factor)) / factor
         let lon = Double(round(longitude * factor)) / factor
         let url = URL(string: "https://api.open-meteo.com/v1/forecast?latitude=\(lat)&longitude=\(lon)&current_weather=true")!
-        logger.info("fetching URL: \(url.absoluteString)")
 
         var request = URLRequest(url: url)
         request.setValue("skipapp-bookings", forHTTPHeaderField: "User-Agent")
+
+        logger.info("fetching weather endpoint: \(url.absoluteString)")
         let (data, response) = try await URLSession.shared.data(for: request)
         logger.info("received response: \(response)")
         return try JSONDecoder().decode(Weather.self, from: data)
