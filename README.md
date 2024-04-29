@@ -1,6 +1,6 @@
 # Travel
 
-This is a demonstration full-featured
+This is a demonstration of a full-featured
 [Skip](https://skip.tools) dual-platform app project
 for both iOS and Android. It is a travel exploration app
 that displays cities loaded from a bundled JSON asset,
@@ -13,7 +13,9 @@ and has the following features:
   - dynamic temperature update using a weather web service endpoint
   - a settings view enabling override of preferred color scheme and display units
   
-![iOS Screenshot](https://assets.skip.tools/skipapp-bookings/city-list-iphone.png) ![Android Screenshot](https://assets.skip.tools/skipapp-bookings/city-list-android.png)
+  iOS |  Android
+:----:|:--------:
+![iOS Screenshot](https://assets.skip.tools/skipapp-bookings/city-list-iphone.png) | ![Android Screenshot](https://assets.skip.tools/skipapp-bookings/city-list-android.png)
 
 ## Building
 
