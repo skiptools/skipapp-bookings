@@ -13,6 +13,12 @@ and has the following features:
   - dynamic temperature update using a weather web service endpoint
   - a settings view enabling override of preferred color scheme and display units
   
+<video autoplay muted loop playsinline controlslist="nodownload" style="background: transparent; width: 100%;" poster="https://www.skip.tools/assets/video/skip-splash-poster.png">
+    <source src="https://www.skip.tools/assets/video/skip-splash.mov" type="video/webm">
+    Your browser does not support the video tag.
+</video>
+
+
   iOS |  Android
 :----:|:--------:
 ![iOS Screenshot](https://assets.skip.tools/skipapp-bookings/city-list-iphone.png) | ![Android Screenshot](https://assets.skip.tools/skipapp-bookings/city-list-android.png)
