@@ -34,6 +34,7 @@ struct WebView: ViewAdapter {
                 let client = WebViewClient()
                 webView.webViewClient = client
                 webView.settings.javaScriptEnabled = enableJavaScript
+                webView.setBackgroundColor(0x000000)
                 webView.loadUrl(url.absoluteString)
                 return webView
             }, modifier: context.modifier, update: { webView in
