@@ -7,7 +7,7 @@ struct CityNavigationLink : View {
     @AppStorage("kilometers") var kilometers: Bool = true
 
     var body: some View {
-        NavigationLink(value: city.id) {
+        NavigationLink(value: city) {
             HStack {
                 AsyncImage(url: city.imageURL) { image in
                     image.resizable().clipped()

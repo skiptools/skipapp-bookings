@@ -20,10 +20,8 @@ struct FavoriteCityListView : View {
                     cityManager.favoriteIDs.remove(atOffsets: indices)
                 }
             }
-            .navigationDestination(for: City.ID.self) { id in
-                if let city = cityManager.allCities.first(where: { $0.id == id }) {
-                    CityView(city: city, showFavorites: false)
-                }
+            .navigationDestination(for: City.self) { city in
+                CityView(city: city, showFavorites: false)
             }
         }
     }
