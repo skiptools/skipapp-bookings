@@ -1,7 +1,7 @@
 import Foundation
 
 /// A City model
-struct City : Identifiable, Codable {
+struct City : Identifiable, Codable, Hashable {
     typealias ID = Int
 
     let id: ID
