@@ -52,8 +52,6 @@ Package.resolved
 # hence it is not needed unless you have added a package configuration file to your project
 .swiftpm
 .build/
-.idea/
-.gradle/
 
 # CocoaPods
 #
@@ -84,10 +82,13 @@ Dependencies/
 # For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
 
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots/**/*.png
-fastlane/test_output
+**/fastlane/apikey.json
+**/fastlane/report.xml
+**/fastlane/README.md
+**/fastlane/Preview.html
+**/fastlane/screenshots/**/*.png
+**/fastlane/metadata/android/*/images/**/*.png
+**/fastlane/test_output
 
 # Code Injection
 #
