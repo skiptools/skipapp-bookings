@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// A link to a city
-struct CityNavigationLink : View {
+struct CityListNavigationLink : View {
     let city: City
     var fromCity: City? = nil
     @AppStorage("kilometers") var kilometers: Bool = true

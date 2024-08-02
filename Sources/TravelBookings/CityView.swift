@@ -42,7 +42,7 @@ struct CityView: View {
                     CountryInfoSection()
                 }
                 Section("Nearest Cities") {
-                    ForEach(cityManager.citiesClosest(to: city), content: { CityNavigationLink(city: $0, fromCity: city) })
+                    ForEach(cityManager.citiesClosest(to: city), content: { CityListNavigationLink(city: $0, fromCity: city) })
                 }
             }
         }

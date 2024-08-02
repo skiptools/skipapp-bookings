@@ -11,7 +11,7 @@ struct FavoriteCityListView : View {
         } else {
             List {
                 ForEach(cityManager.favoriteCities) { city in
-                    CityNavigationLink(city: city)
+                    CityListNavigationLink(city: city)
                 }
                 .onMove(perform: { indices, i in
                     cityManager.favoriteIDs.move(fromOffsets: indices, toOffset: i)
