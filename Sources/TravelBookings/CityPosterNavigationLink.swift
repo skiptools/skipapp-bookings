@@ -22,7 +22,6 @@ struct CityPosterNavigationLink : View {
                     .foregroundStyle(.white)
                     .padding()
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .cornerRadius(20)
         }
     }
