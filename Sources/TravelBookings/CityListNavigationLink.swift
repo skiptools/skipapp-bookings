@@ -18,7 +18,7 @@ struct CityListNavigationLink : View {
                 .frame(width: 50, height: 50)
 
                 VStack(alignment: .leading) {
-                    Text("\(city.name), \(city.country)")
+                    Text(verbatim: "\(city.name), \(city.country)")
 
                     if let fromCity = fromCity {
                         // if we are displaying this city relative from another, show the distance
