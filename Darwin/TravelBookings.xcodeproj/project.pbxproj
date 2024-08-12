@@ -39,6 +39,7 @@
 		49F90C2B2A52156200F06D93 /* TravelBookingsAppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TravelBookingsAppMain.swift; path = Sources/TravelBookingsAppMain.swift; sourceTree = SOURCE_ROOT; };
 		49F90C2F2A52156300F06D93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49F90C312A52156300F06D93 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Entitlements.plist; sourceTree = "<group>"; };
+		E3AF6E9D2C6A6F8F00DDE059 /* TravelBookings-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TravelBookings-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +73,7 @@
 		49F90C1F2A52156200F06D93 = {
 			isa = PBXGroup;
 			children = (
+				E3AF6E9D2C6A6F8F00DDE059 /* TravelBookings-Info.plist */,
 				496EB72F2A6AE4DE00C1253C /* README.md */,
 				496EB72F2A6AE4DE00C1253A /* Skip.env */,
 				496EB72F2A6AE4DE00C1253B /* TravelBookings.xcconfig */,
@@ -220,6 +222,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "TravelBookings-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				SDKROOT = auto;
@@ -234,6 +237,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "TravelBookings-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				SDKROOT = auto;
@@ -248,6 +252,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "TravelBookings-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				SDKROOT = auto;

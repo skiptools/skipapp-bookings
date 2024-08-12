@@ -3,6 +3,7 @@ import SwiftUI
 /// The top-level view of the app, containing the primary tabs
 public struct ContentView: View {
     @AppStorage("tab") var tab = Tab.cities
+    @State var cityListPath = NavigationPath()
     @State var appearance = ""
     @ObservedObject var cityManager = CityManager.shared
 
@@ -11,7 +12,7 @@ public struct ContentView: View {
 
     public var body: some View {
         TabView(selection: $tab) {
-            NavigationStack {
+            NavigationStack(path: $cityListPath) {
                 CityListView()
                     .navigationTitle("Cities")
             }
@@ -31,6 +32,19 @@ public struct ContentView: View {
         }
         .environmentObject(cityManager)
         .preferredColorScheme(appearance == "dark" ? .dark : appearance == "light" ? .light : nil)
+        .onOpenURL { url in
+            // travelbookings://<tab>/path
+            if let tabName = url.host(), let tab = Tab(rawValue: tabName) {
+                self.tab = tab
+                if tab == .cities, let city = cityManager.allCities.first(where: { $0.name == url.lastPathComponent }) {
+                    // Does not push city properly on iOS without async dispatch
+                    DispatchQueue.main.async {
+                        cityListPath.removeLast(cityListPath.count)
+                        cityListPath.append(city.id)
+                    }
+                }
+            }
+        }
     }
 }
 
