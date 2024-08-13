@@ -11,7 +11,7 @@ struct CityPosterNavigationLink : View {
                     image.resizable().clipped()
                 } placeholder: {
                     Rectangle()
-                        .fill(.primary.opacity(0.2))
+                        .fill(.primary.opacity(0.1))
                 }
                 .aspectRatio(1, contentMode: .fill)
 

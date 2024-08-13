@@ -12,7 +12,7 @@ struct CityListNavigationLink : View {
                 AsyncImage(url: city.imageURL) { image in
                     image.resizable().clipped()
                 } placeholder: {
-                    ProgressView()
+                    Color.primary.opacity(0.1)
                 }
                 .cornerRadius(8)
                 .frame(width: 50, height: 50)
