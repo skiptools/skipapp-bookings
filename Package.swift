@@ -19,8 +19,8 @@ let package = Package(
         .library(name: "TravelBookingsApp", type: .dynamic, targets: ["TravelBookings"]),
     ],
     dependencies: [
-        .package(url: "https://source.skip.tools/skip.git", from: "0.9.2"),
-        .package(url: "https://source.skip.tools/skip-ui.git", from: "0.12.5")
+        .package(url: "https://source.skip.tools/skip.git", from: "1.0.4"),
+        .package(url: "https://source.skip.tools/skip-ui.git", from: "1.0.0")
     ],
     targets: [
         .target(name: "TravelBookings", dependencies: (zero ? [] : [.product(name: "SkipUI", package: "skip-ui")]), resources: [.process("Resources")], plugins: skipstone),
