@@ -10,7 +10,7 @@
 		49231BAC2AC5BCEF00F98ADF /* TravelBookingsApp in Frameworks */ = {isa = PBXBuildFile; productRef = 49231BAB2AC5BCEF00F98ADF /* TravelBookingsApp */; };
 		49231BAD2AC5BCEF00F98ADF /* TravelBookingsApp in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 49231BAB2AC5BCEF00F98ADF /* TravelBookingsApp */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		496BDBEE2B8A7E9C00C09264 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 496BDBED2B8A7E9C00C09264 /* Localizable.xcstrings */; };
-		499CD43B2AC5B799001AE8D8 /* TravelBookingsAppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F90C2B2A52156200F06D93 /* TravelBookingsAppMain.swift */; };
+		499CD43B2AC5B799001AE8D8 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F90C2B2A52156200F06D93 /* Main.swift */; };
 		499CD4402AC5B799001AE8D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49F90C2F2A52156300F06D93 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +36,7 @@
 		496EB72F2A6AE4DE00C1253B /* TravelBookings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TravelBookings.xcconfig; sourceTree = "<group>"; };
 		496EB72F2A6AE4DE00C1253C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		499AB9082B0581F4005E8330 /* plugins */ = {isa = PBXFileReference; lastKnownFileType = folder; name = plugins; path = ../../../SourcePackages/plugins; sourceTree = BUILT_PRODUCTS_DIR; };
-		49F90C2B2A52156200F06D93 /* TravelBookingsAppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TravelBookingsAppMain.swift; path = Sources/TravelBookingsAppMain.swift; sourceTree = SOURCE_ROOT; };
+		49F90C2B2A52156200F06D93 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Main.swift; path = Sources/Main.swift; sourceTree = SOURCE_ROOT; };
 		49F90C2F2A52156300F06D93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49F90C312A52156300F06D93 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Entitlements.plist; sourceTree = "<group>"; };
 		E3AF6E9D2C6A6F8F00DDE059 /* TravelBookings-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TravelBookings-Info.plist"; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 		49F90C2A2A52156200F06D93 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				49F90C2B2A52156200F06D93 /* TravelBookingsAppMain.swift */,
+				49F90C2B2A52156200F06D93 /* Main.swift */,
 				49F90C2F2A52156300F06D93 /* Assets.xcassets */,
 				49F90C312A52156300F06D93 /* Entitlements.plist */,
 			);
@@ -192,7 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				499CD43B2AC5B799001AE8D8 /* TravelBookingsAppMain.swift in Sources */,
+				499CD43B2AC5B799001AE8D8 /* Main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
