@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher">
-        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDfEdAShCMgw0YkeZUywRg3nP1KGbPA6qg"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyBdt_bhz4zi6WAUelkVkEnxMs9pkbEKXKM"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
