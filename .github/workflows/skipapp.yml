@@ -15,4 +15,4 @@ permissions:
 
 jobs:
   call-workflow:
-    uses: skiptools/actions/.github/workflows/skip-app.yml@main
+    uses: skiptools/actions/.github/workflows/skip-app.yml@v1
