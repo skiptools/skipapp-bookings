@@ -1,17 +1,17 @@
 # Travel
 
 This is a demonstration of a full-featured
-[Skip](https://skip.tools) dual-platform app project
+[Skip Lite](https://skip.tools) dual-platform app project
 for both iOS and Android. It is a travel exploration app
 that displays cities loaded from a bundled JSON asset,
 and has the following features:
 
-  - a navigation list of the bundled city list
-  - a persistent favorites list that can be modified and reordered
-  - an embedded maps view for any given city
-  - an embedded web view showing the wikipedia page for the city
-  - dynamic temperature update using a weather web service endpoint
-  - a settings view enabling override of preferred color scheme and display units
+  - A navigation list of the bundled city list
+  - A persistent favorites list that can be modified and reordered
+  - An embedded maps view for any given city
+  - An embedded web view showing the wikipedia page for the city
+  - Dynamic temperature update using a weather web service endpoint
+  - A settings view enabling override of preferred color scheme and display units
   
 <video autoplay muted loop playsinline controlslist="nodownload" style="background: transparent; width: 100%;" poster="https://www.skip.tools/assets/video/skip-splash-poster.png">
     <source src="https://www.skip.tools/assets/video/skip-splash.mov" type="video/webm">
