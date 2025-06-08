@@ -5,10 +5,9 @@
 // Swift Package, Sources, and Tests into an
 // Android Gradle Project with Kotlin sources and JUnit tests.
 import PackageDescription
-import Foundation
 
 // Set SKIP_ZERO=1 to build without Skip libraries
-let zero = ProcessInfo.processInfo.environment["SKIP_ZERO"] != nil
+let zero = Context.environment["SKIP_ZERO"] != nil
 let skipstone = !zero ? [Target.PluginUsage.plugin(name: "skipstone", package: "skip")] : []
 
 let package = Package(
