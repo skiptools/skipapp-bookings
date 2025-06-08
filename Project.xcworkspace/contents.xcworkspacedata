@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Darwin/HelloSkip.xcodeproj">
+      location = "group:Darwin/TravelBookings.xcodeproj">
    </FileRef>
 </Workspace>
