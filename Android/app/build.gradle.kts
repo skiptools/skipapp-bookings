@@ -36,6 +36,18 @@ android {
         buildConfig = true
     }
 
+    lint {
+        disable.add("Instantiatable")
+        disable.add("MissingPermission")
+    }
+
+    dependenciesInfo {
+        // Disables dependency metadata when building APKs.
+        includeInApk = false
+        // Disables dependency metadata when building Android App Bundles.
+        includeInBundle = false
+    }
+
     // default signing configuration tries to load from keystore.properties
     // see: https://skip.tools/docs/deployment/#export-signing
     signingConfigs {
