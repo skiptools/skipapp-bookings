@@ -1,5 +1,5 @@
 // swift-tools-version: 5.9
-// This is a Skip (https://skip.tools) package,
+// This is a Skip (https://skip.dev) package,
 // containing a Swift Package Manager project
 // that will use the Skip build plugin to transpile the
 // Swift Package, Sources, and Tests into an
