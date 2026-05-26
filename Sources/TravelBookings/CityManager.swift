@@ -10,7 +10,7 @@ class CityManager : ObservableObject {
     static let favoritesURL: URL = URL.documentsDirectory.appendingPathComponent("favorites.json")
 
     /// The app-wide singleton `CityManager`
-    static let shared = CityManager()
+    nonisolated(unsafe) static let shared = CityManager()
 
     private init() {
         do {
